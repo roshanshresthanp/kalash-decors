@@ -191,7 +191,7 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav mr-auto">
                                     <li class="nav-item dropdown submenu active">
-                                        <a class="nav-link dropdown-toggle" href="{{ url('/') }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <a class="nav-link " href="{{ url('/') }}" role="button" >
                                         Home
                                         </a>
                                         {{-- <ul class="dropdown-menu">

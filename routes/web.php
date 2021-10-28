@@ -1,7 +1,10 @@
 <?php
 use App\Http\Controllers\ContactController;
 
+use App\Http\Controllers\Admin\Category\CategoryController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\DashboardController;
+// use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +26,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('/contact', ContactController::class);
+Route::group(['prefix'=>'admin','middleware'=>['auth']], function(){
+
+    Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
+    // Route::get('category', CategoryController::class);
+});
