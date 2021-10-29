@@ -1,7 +1,7 @@
 @extends('guest.layouts.master')
 
 @section('content')
-<section class="solid_banner_area">
+{{-- <section class="solid_banner_area">
     <div class="container">
         <div class="solid_banner_inner">
             <h3>Contact</h3>
@@ -11,11 +11,11 @@
             </ul>
         </div>
     </div>
-</section>
+</section> --}}
 <!--================End Categories Banner Area =================-->
 
 <!--================Contact Area =================-->
-<section class="contact_area p_100">
+<section class="contact_area">
     <div class="container">
         <div class="contact_title">
             <h2>Get in Touch</h2>
@@ -27,7 +27,7 @@
                         <i class="fa fa-map-marker" aria-hidden="true"></i>
                     </div>
                     <div class="media-body">
-                        <p>Address<br />Austraila.</p>
+                        <p>Kambah,<br />ACT,2902.</p>
                     </div>
                 </div>
             </div>
@@ -37,8 +37,8 @@
                         <i class="fa fa-phone" aria-hidden="true"></i>
                     </div>
                     <div class="media-body">
-                        <a href="tel:+1109171234567">Phone number</a>
-                        <a href="tel:+1101911897654">Phone number</a>
+                        <a href="tel:+1109171234567">0426784925</a>
+                        <a href="tel:+1101911897654">0435669900</a>
                     </div>
                 </div>
             </div>
@@ -48,8 +48,8 @@
                         <i class="fa fa-envelope" aria-hidden="true"></i>
                     </div>
                     <div class="media-body">
-                        <a href="mailto:busines@persuit.com">mail</a>
-                        <a href="mailto:support@persuit.com">support@support.com</a>
+                        <a href="mailto:busines@persuit.com">Mail</a>
+                        <a href="mailto:support@persuit.com">kalashcollections2021@gmail.com</a>
                     </div>
                 </div>
             </div>

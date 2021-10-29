@@ -118,7 +118,7 @@
       
     <body class="home_sidebar">
         
-        <div class="container">
+        {{-- <div class="container">
    
             @if (Route::has('login'))
                 <div class="rel top-0 right-0 px-6 py-4 sm:block">
@@ -140,7 +140,7 @@
                 </div>
             @endif
        
-        </div>
+        </div> --}}
             <!--================Menu Area =================-->
            
             
@@ -167,10 +167,25 @@
                             </div>
                             <div class="float-md-right">
                                 <ul class="account_list">
-                                    <li><a href="#">My Account</a></li>
+                                    {{-- <li><a href="#">My Account</a></li> --}}
                                     <li><a href="#">Wish List (0)</a></li>
                                     <li><a href="#">Shopping Cart</a></li>
                                     <li><a href="#">Checkout</a></li>
+                                @if (Route::has('login'))
+                                    @auth
+                                <li><a href="{{ url('/home') }}" >Home</a></li>
+                                <li> <a href="{{route('logout')}}"   onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">Sign Out</a></li>
+                                        <li><form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form></li>
+                                         @else
+                                    <li><a href="{{ route('login') }}" >Log in</a></li>
+                                        @if (Route::has('register'))
+                                        <li><a href="{{ route('register') }}" >Register</a></li>
+                                        @endif
+                                    @endauth
+                                @endif
                                 </ul>
                             </div>
                         </div>
@@ -217,7 +232,7 @@
                                         </ul>
                                     </li> --}}
                                     <li class="nav-item dropdown submenu">
-                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <a class="nav-link dropdown-toggle" href="{{ route('products.index') }}" >
                                         Shop 
                                         </a>
                                         {{-- <ul class="dropdown-menu">
@@ -235,7 +250,8 @@
                                             <li class="nav-item"><a class="nav-link" href="empty-cart.html">Empty Cart</a></li>
                                         </ul> --}}
                                     </li>
-                                    <li class="nav-item"><a class="nav-link" href="#">Blog</a></li> 
+                                    <li class="nav-item"><a class="nav-link" href="{{ route('aboutus.index') }}">About Us</a></li> 
+                                    <li class="nav-item"><a class="nav-link" href="{{ route('products.create') }}">View page</a></li> 
                                     {{-- <li class="nav-item"><a class="nav-link" href="#">lookbook</a></li> --}}
                                     <li class="nav-item"><a class="nav-link" href="{{ route('contact.index') }}">Contact</a></li>
                                 </ul>

@@ -1,5 +1,7 @@
 <?php
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ShopController;
 
 use App\Http\Controllers\Admin\Category\CategoryController;
 use Illuminate\Support\Facades\Route;
@@ -24,7 +26,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::resource('/aboutus', AboutController::class);
+Route::resource('/products', ShopController::class);
 Route::resource('/contact', ContactController::class);
 Route::group(['prefix'=>'admin','middleware'=>['auth']], function(){
 
