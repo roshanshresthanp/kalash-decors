@@ -6,7 +6,7 @@
 <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
 	<li class="breadcrumb-item text-muted">
 		<a href="{{route('admin.dashboard') }}" class="text-muted">Dashboard</a>
-	</li>
+	</li>   
     <li class="breadcrumb-item text-muted">
 		<a href="{{ route('admin.category.index')}}" class="text-muted">Category</a>
 	</li>

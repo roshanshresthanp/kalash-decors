@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ShopController;
 
 use App\Http\Controllers\Admin\Category\CategoryController;
+use App\Http\Controllers\Admin\Product\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 // use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -33,4 +34,6 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['auth']], function
 
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
     Route::resource('category', CategoryController::class);
+    Route::resource('product', ProductController::class);
+
 });

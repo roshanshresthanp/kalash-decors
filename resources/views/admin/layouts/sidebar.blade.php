@@ -27,6 +27,13 @@
                     <span class="menu-text">Category</span>
                 </a>
             </li>
+            <li class="menu-item {{ request()->is('admin/product') ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                <a href="{{route('admin.product.index')}}" class="menu-link">
+                    <span class="svg-icon menu-icon fa fa-users">
+                    </span>
+                    <span class="menu-text">Products</span>
+                </a>
+            </li>
             {{-- @can('isAdmin') --}}
             {{-- <li class="menu-item {{ request()->is('admin/user/*') || request()->is('admin/user') ? 'menu-item-active' : '' }}" aria-haspopup="true">
                 <a href="{{route('admin.user.index')}}" class="menu-link">
