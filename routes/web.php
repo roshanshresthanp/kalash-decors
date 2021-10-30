@@ -29,8 +29,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('/aboutus', AboutController::class);
 Route::resource('/products', ShopController::class);
 Route::resource('/contact', ContactController::class);
-Route::group(['prefix'=>'admin','middleware'=>['auth']], function(){
+Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['auth']], function(){
 
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
-    // Route::get('category', CategoryController::class);
+    Route::resource('category', CategoryController::class);
 });
