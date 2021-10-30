@@ -4,7 +4,9 @@
 	<!--begin::Head-->
 	<head><base href="">
 		<meta charset="utf-8" />
-		<title> @if(Auth()->user()->role=='office-staff') Admin Dashboard @elseif (Auth()->user()->role=='property-owner') Owner Dashboard @else Client Dashboard @endif | @yield('title')</title>
+		{{-- <title> @if(Auth()->user()->role=='office-staff') Admin Dashboard @elseif (Auth()->user()->role=='property-owner') Owner Dashboard @else Client Dashboard @endif | @yield('title')</title> --}}
+		<title> Admin Dashboard | @yield('title')</title>
+
 		<meta name="description" content="Metronic admin dashboard live demo. Check out all the features of the admin panel. A large number of settings, additional services and widgets." />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 		<link rel="canonical" href="https://keenthemes.com/metronic" />
@@ -159,7 +161,7 @@
 		</div>
 		<!--end::Main-->
 		<!-- begin::User Panel-->
-		@include('admin.layouts.userpanel')
+		{{-- @include('admin.layouts.userpanel') --}}
 		<!-- end::User Panel-->
 		<!--begin::Quick Cart-->
 		
