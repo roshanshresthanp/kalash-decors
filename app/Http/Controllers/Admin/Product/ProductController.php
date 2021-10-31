@@ -79,8 +79,7 @@ class ProductController extends Controller
             }
             $data['photo'] = json_encode($img);   
 
-            // @if()
-            // $data['availability'] = 
+            
         }
         // dd($data);
         Product::create($data);
@@ -153,10 +152,17 @@ class ProductController extends Controller
             }
             $data['photo'] = json_encode($image);    
         }
+            if(isset($request->availability) && $request->availability=="on")
+            {
+                $data['availability'] = 1;
+
+            }else{
+                $data['availability'] = 0;
+            }
         // dd($data);
 
         $pro->update($data);
-        return redirect()->back()->with('success','Product updated successfully');
+        return redirect('admin/product')->with('success','Product updated successfully');
     }
 
     /**

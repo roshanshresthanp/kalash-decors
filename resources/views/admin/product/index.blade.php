@@ -28,7 +28,7 @@
     $(function () {
 
 $("#datatable").DataTable({
-    "scrollY": 200,
+    // "scrollY": 200,
         "scrollX": true
 });
 });
@@ -84,8 +84,8 @@ $("#datatable").DataTable({
                         <th>Description</th>
                         <th>category</th>
                         <th>Price (AUD)</th>
+                        <th>featured photo</th>
                         <th>Availability</th>
-                        <th>feature photo</th>
                         <th>Actions<th>
                     </tr>
                 </thead>
@@ -98,8 +98,8 @@ $("#datatable").DataTable({
                             <td>{!!str_limit($product->description,300)!!}</td>
                             <td><span class="badge badge-primary">{{$product->category->name}}</span></td>
                             <td>{{$product->price}}</td>
+                            <td><img src="{{asset('storage/images/product/'.$product->featured_photo)}}" height="80" width="80" ></td>
                             <td>@if($product->availability==1) <span class="badge badge-success">Yes<span> @else <span class="badge badge-danger">No <span> @endif</td>
-                            <td><img src="{{url('storage/app/public/images/product/'.$product->featured_photo)}}" height="100" width="100" ></td>
                             <td> 
                                 <form action="{{route('admin.product.destroy', $product->id) }}" method="post">
                                     @method('delete')
