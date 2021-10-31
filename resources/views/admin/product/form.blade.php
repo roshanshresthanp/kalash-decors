@@ -184,7 +184,7 @@
                 <div class="form-group row">
                     <label class="col-6 col-form-label">Availability</label>
                     <div class="col-3">
-                        {{-- <span class="switch"> --}}
+                        <span class="switch">
                             <label>
                             
                             <input type="checkbox" @if(isset($product)) @if($product->availability==1) checked @endif @else value="1" checked @endif name="availability"/>
@@ -193,7 +193,7 @@
                             @endif --}}
                             <span></span>
                             </label>
-                        {{-- </span> --}}
+                        </span>
                     </div>
                 </div>
 

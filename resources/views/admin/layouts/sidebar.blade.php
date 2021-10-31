@@ -22,14 +22,14 @@
             </li>
             <li class="menu-item {{ request()->is('admin/category') ? 'menu-item-active' : '' }}" aria-haspopup="true">
                 <a href="{{route('admin.category.index')}}" class="menu-link">
-                    <span class="svg-icon menu-icon fa fa-users">
+                    <span class="svg-icon menu-icon fas fa-layer-group">
                     </span>
                     <span class="menu-text">Category</span>
                 </a>
             </li>
             <li class="menu-item {{ request()->is('admin/product') ? 'menu-item-active' : '' }}" aria-haspopup="true">
                 <a href="{{route('admin.product.index')}}" class="menu-link">
-                    <span class="svg-icon menu-icon fa fa-users">
+                    <span class="svg-icon menu-icon fab fa-product-hunt">
                     </span>
                     <span class="menu-text">Products</span>
                 </a>
