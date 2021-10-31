@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ShopController;
 
 use App\Http\Controllers\Admin\Category\CategoryController;
+use App\Http\Controllers\Admin\Product\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 // use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -29,8 +30,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('/aboutus', AboutController::class);
 Route::resource('/products', ShopController::class);
 Route::resource('/contact', ContactController::class);
-Route::group(['prefix'=>'admin','middleware'=>['auth']], function(){
+Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['auth']], function(){
 
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
-    // Route::get('category', CategoryController::class);
+    Route::resource('category', CategoryController::class);
+    Route::resource('product', ProductController::class);
+
 });
