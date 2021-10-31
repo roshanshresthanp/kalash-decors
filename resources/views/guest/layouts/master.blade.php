@@ -196,7 +196,7 @@
                         <nav class="navbar navbar-expand-lg navbar-light bg-light">
                             {{-- <a class="navbar-brand" href="#"><img src="frontend/img/logo.png" alt=""></a> --}}
                             <div >
-                                <h1>KalashDecors</h1>
+                                <h2>KalashDecors</h2>
                             </div>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
