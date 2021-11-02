@@ -9,9 +9,15 @@
                             <div class="sidebar_main_content_area">
                                 <div class="advanced_search_area">
                                     <select class="selectpicker">
+                                        
                                         <option>All Categories</option>
-                                        <option>All Categories</option>
-                                        <option>All Categories</option>
+                                        @if(isset($category))
+                                        @foreach($category as $cat)
+                                        @if($cat->parent_id != 0)
+                                        <option>{{$cat->name}}</option>
+                                        @endif  
+                                        @endforeach
+                                        @endif
                                     </select>
                                     <div class="input-group">
                                         <input type="text" class="form-control" placeholder="Search" aria-label="Search">
@@ -164,19 +170,23 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="fillter_home_sidebar">
+                                <div class="">
                                     <ul class="portfolio_filter">
-                                        <li class="active" data-filter="*"><a href="#">men's</a></li>
+                                        {{-- <li class="active" data-filter="*"><a href="#">men's</a></li>
                                         <li data-filter=".woman"><a href="#">Woman</a></li>
                                         <li data-filter=".shoes"><a href="#">Shoes</a></li>
-                                        <li data-filter=".bags"><a href="#">Bags</a></li>
+                                        <li data-filter=".bags"><a href="#">Bags</a></li> --}}
                                     </ul>
                                     <div class="home_l_product_slider owl-carousel">
-                                        <div class="item woman shoes">
-                                            <div class="l_product_item">
+                                        
+                                            
+                                        <div class="item ">
+                                            <div class="l_product_item ">
+                                                @if(isset($product))
+                                                 @foreach ($product as $pro)
                                                 <div class="l_p_img">
-                                                    <img src="frontend/img/product/fillter-product/f-product-8.jpg" alt="">
-                                                    <h5 class="sale">Sale</h5>
+                                                    <img src="{{asset('storage/images/product/'.$pro->featured_photo)}}" alt="noimage">
+                                                    {{-- <h5 class="sale">Sale</h5>  --}}
                                                 </div>
                                                 <div class="l_p_text">
                                                     <ul>
@@ -184,27 +194,20 @@
                                                         <li><a class="add_cart_btn" href="#">Add To Cart</a></li>
                                                         <li class="p_icon"><a href="#"><i class="icon_heart_alt"></i></a></li>
                                                     </ul>
-                                                    <h4>Womens Libero</h4>
-                                                    <h5><del>$45.50</del>  $40</h5>
+                                                    <h4>{{$pro->name}}</h4>
+                                                    <h5>
+                                                        {{-- <del>$45.50</del> --}}
+                                                        AUD {{$pro->price}}    </h5>
                                                 </div>
-                                            </div>
-                                            <div class="l_product_item woman bags">
-                                                <div class="l_p_img">
-                                                    <img src="frontend/img/product/fillter-product/f-product-11.jpg" alt="">
-                                                    <h5 class="new">New</h5>
-                                                </div>
-                                                <div class="l_p_text">
-                                                   <ul>
-                                                        <li class="p_icon"><a href="#"><i class="icon_piechart"></i></a></li>
-                                                        <li><a class="add_cart_btn" href="#">Add To Cart</a></li>
-                                                        <li class="p_icon"><a href="#"><i class="icon_heart_alt"></i></a></li>
-                                                    </ul>
-                                                    <h4>Oxford Shirt</h4>
-                                                    <h5>$85.50</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item woman bags">
+                                                @endforeach
+                                        @endif
+                                            </div> 
+                                </div>
+                                            
+                                        
+                                       
+
+                                        {{-- <div class="item woman bags">
                                             <div class="l_product_item">
                                                 <div class="l_p_img">
                                                     <img src="frontend/img/product/fillter-product/f-product-9.jpg" alt="">
@@ -265,7 +268,7 @@
                                                     <h5>$250.00</h5>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                                 
@@ -315,36 +318,29 @@
                                     </div>
                                     
 
-    
-    <button class="dropdown-btn1">Womens' Fashion 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-container1">
-      <a href="#">Saree</a><br>
-      <a href="#">Kurtha</a><br>
-      <a href="#">Others</a><br>
-    </div>
-    <button class="dropdown-btn1">Home Decors 
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-container1">
-        <a href="#">Brass and Copper Products</a><br>
-        <a href="#">Plated Products</a><br>
-        <a href="#">Others</a><br>
-      </div>
+                                    @if(isset($category))
+                                    @foreach ($category as $cat)
+                                    @if($cat->parent_id == 0)
+                                    <button class="dropdown-btn1">{{$cat->name}}
+                                        <i class="fa fa-caret-down"></i>
+                                    </button>
+                                    
+                                    <div class="dropdown-container1">
+                                        {{-- <a href="#">Saree</a><br> --}}
+                                        @foreach ($cat->submenu as $smenu)
+                                        <a href="#">{{$smenu->name}}</a>
+                                        @endforeach
+                                        
+                                    </div>
+                                    @endif
+                                    @endforeach
+                                    @endif
 
-
-  
-
-  
-  
-  
-                                   
                                 </aside>
-                                <aside class="l_widget l_supper_widget">
+                                {{-- <aside class="l_widget l_supper_widget">
                                     <img class="img-fluid" src="frontend/img/supper-add-1.jpg" alt="">
                                     <h4>Super Summer Collection</h4>
-                                </aside>
+                                </aside> --}}
                                 <aside class="l_widget l_feature_widget">
                                     <div class="verticalCarousel">
                                         <div class="verticalCarouselHeader">

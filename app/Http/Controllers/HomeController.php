@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,8 +25,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
-        return view('home');
+        $category = Category::all();
+        $product = Product::latest()->take(9)->get();
+        // dd($product);
+        // foreach($category as $cat)
+        // {
+        //     dd($cat->submenu,'ss');
+        // }
+        return view('welcome',compact('category','product'));
     }
     
 }

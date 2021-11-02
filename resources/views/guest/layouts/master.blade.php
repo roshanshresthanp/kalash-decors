@@ -265,6 +265,7 @@
                     </div>
                 </div>
             </header>
+            @include('guest.layouts.header')
             <div>
                 @yield('content')
             </div>
