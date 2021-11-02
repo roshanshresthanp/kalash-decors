@@ -20,16 +20,27 @@ use App\Http\Controllers\Admin\DashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('/aboutus', AboutController::class);
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('/about-us', AboutController::class);
 Route::resource('/products', ShopController::class);
 Route::resource('/contact', ContactController::class);
+
+Route::get('/view-{name}',[ShopController::class,'productDetail'])->name('product.view');
+
+
+
+
+
+
+
 Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['auth']], function(){
 
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');

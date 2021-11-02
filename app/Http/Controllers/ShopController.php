@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ShopController extends Controller
@@ -13,9 +14,17 @@ class ShopController extends Controller
      */
     public function index()
     {
-        return view('guest.products');
+        $products = Product::all();
+        return view('guest.products',compact('products'));
     }
    
+    public function productDetail($name)
+    {
+        $pro = Product::where('name',$name)->first();
+        // dd($pro);
+        return view('guest.view-products',compact('pro'));
+
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -24,7 +33,7 @@ class ShopController extends Controller
      */
     public function create()
     {
-        return view('guest.view-products');
+        // return view('guest.view-products');
     }
 
     /**

@@ -8,21 +8,31 @@
                 <div class="product_details_slider">
                     <div id="product_slider" class="rev_slider" data-version="5.3.1.6">
                         <ul>	<!-- SLIDE  -->
-                            <li data-index="rs-137221490" data-transition="scaledownfrombottom" data-slotamount="7"  data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500"  data-thumb="img/product/product-details/p-details-tab-1.jpg"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="Ishtar X Tussilago" data-param1="25/08/2015" data-description="">
+                            @if (isset($pro) && isset($pro->photo))
+                                @foreach (json_decode($pro->photo) as $img)
+                                
+                                <li data-index="rs-137221490" data-transition="scaledownfrombottom" data-slotamount="7"  data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500"  data-thumb="{{asset('storage/images/product/'.$img)}}"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="Ishtar X Tussilago" data-param1="25/08/2015" data-description="">
+                                    <!-- MAIN IMAGE -->
+                                    <img src="{{asset('storage/images/product/'.$img)}}"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
+                                    <!-- LAYERS -->
+                                </li>
+                                @endforeach
+                            @endif
+                            {{-- <li data-index="rs-137221490" data-transition="scaledownfrombottom" data-slotamount="7"  data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500"  data-thumb="img/product/product-details/p-details-tab-1.jpg"  data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="Ishtar X Tussilago" data-param1="25/08/2015" data-description="">
                                 <!-- MAIN IMAGE -->
-                                <img src="frontend/img/product/product-details/p-details-big-1.jpg"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
+                                <img src="{{asset('frontend/img/product/product-details/p-details-big-1.jpg')}}"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
                                 <!-- LAYERS -->
                             </li>
                             <!-- SLIDE  -->
                             <li data-index="rs-136228343" data-transition="scaledownfrombottom" data-slotamount="7"  data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500"  data-thumb="img/product/product-details/p-details-tab-2.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Los Angeles" data-param1="13/08/2015" data-description="">
                                 <!-- MAIN IMAGE -->
-                                <img src="frontend/img/product/product-details/p-details-big-1.jpg"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
+                                <img src="{{asset('frontend/img/product/product-details/p-details-big-1.jpg')}}"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
                                 <!-- LAYERS -->
                             </li>
                             <!-- SLIDE  -->
                             <li data-index="rs-135960434" data-transition="scaledownfrombottom" data-slotamount="7"  data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500"  data-thumb="img/product/product-details/p-details-tab-3.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="The Colors of Feelings" data-param1="11/08/2015" data-description="">
                                 <!-- MAIN IMAGE -->
-                                <img src="frontend/img/product/product-details/p-details-big-1.jpg"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
+                                <img src="{{asset('frontend/img/product/product-details/p-details-big-1.jpg')}}"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
                                 <!-- LAYERS -->
 
                                
@@ -30,18 +40,18 @@
                             <!-- SLIDE  -->
                             <li data-index="rs-134008155" data-transition="scaledownfrombottom" data-slotamount="7"  data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500"  data-thumb="img/product/product-details/p-details-tab-4.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Powerful Iceland" data-param1="20/07/2015" data-description="">
                                 <!-- MAIN IMAGE -->
-                               <img src="frontend/img/product/product-details/p-details-big-1.jpg"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
+                               <img src="{{asset('frontend/img/product/product-details/p-details-big-1.jpg')}}"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
                                 <!-- LAYERS -->
 
                             </li>
                             <!-- SLIDE  -->
                             <li data-index="rs-134774977" data-transition="scaledownfrombottom" data-slotamount="7"  data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500"  data-thumb="img/product/product-details/p-details-tab-1.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Paris Poetry" data-param1="28/07/2015" data-description="">
                                 <!-- MAIN IMAGE -->
-                                <img src="frontend/img/product/product-details/p-details-big-1.jpg"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
+                                <img src="{{asset('frontend/img/product/product-details/p-details-big-1.jpg')}}"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
                                 <!-- LAYERS -->
 
-                            </li>
-                            <!-- SLIDE  -->
+                            </li> --}}
+                            {{-- <!-- SLIDE  -->
                             <li data-index="rs-134208766" data-transition="scaledownfrombottom" data-slotamount="7"  data-easein="Power3.easeInOut" data-easeout="Power3.easeInOut" data-masterspeed="1500"  data-thumb="img/product/product-details/p-details-tab-2.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Creativity Room - New Fubiz 2015" data-param1="22/07/2015" data-description="">
                                 <!-- MAIN IMAGE -->
                                 <img src="frontend/img/product/product-details/p-details-big-1.jpg"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" class="rev-slidebg" data-no-retina>
@@ -62,14 +72,14 @@
                                 <!-- LAYERS -->
 
                             </li>
-                            <!-- SLIDE  -->
+                            <!-- SLIDE  --> --}}
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="col-lg-8">
                 <div class="product_details_text">
-                    <h3>Nike Flex Run Tracksuit</h3>
+                    <h3>{{isset($pro)?$pro->name:''}}</h3>
                     <ul class="p_rating">
                         <li><a href="#"><i class="fa fa-star"></i></a></li>
                         <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -81,10 +91,15 @@
                         <a href="#">5 Reviews</a>
                         <a href="#">Add your review</a>
                     </div>
-                    <h6>Available In <span>Stock</span></h6>
-                    <h4>$45.05</h4>
-                    <p>Curabitur semper varius lectus sed consequat. Nam accumsan dapibus sem, sed lobortis nisi porta vitae. Ut quam tortor, facilisis nec laoreet consequat, malesuada a massa. Proin pretium tristique leo et imperdiet.</p>
-                    <div class="p_color">
+                    <h6>@if(isset($pro)) 
+                        @if($pro->availability ==0)
+                        Out Of
+                        @else Available in
+                        @endif <span>Stock</span>
+                    @endif</h6>
+                    <h4>{{isset($pro)?'AUD ' .$pro->price:''}}</h4>
+                    {!! isset($pro)?$pro->description:''!!}
+                    {{-- <div class="p_color">
                         <h4 class="p_d_title">color <span>*</span></h4>
                         <ul class="color_list">
                             <li><a href="#"></a></li>
@@ -102,7 +117,8 @@
                             <option>Select your size M</option>
                             <option>Select your size XL</option>
                         </select>
-                    </div>
+                    </div> --}}
+                    @if(isset($pro) && $pro->availability==1)
                     <div class="quantity">
                         <div class="custom">
                             <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;" class="reduced items-count" type="button"><i class="icon_minus-06"></i></button>
@@ -111,6 +127,7 @@
                         </div>
                         <a class="add_cart_btn" href="#">add to cart</a>
                     </div>
+                    @endif
                     <div class="shareing_icon">
                         <h5>share :</h5>
                         <ul>
