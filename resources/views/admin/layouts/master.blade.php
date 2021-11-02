@@ -6,7 +6,7 @@
 		<meta charset="utf-8" />
 		{{-- <title> @if(Auth()->user()->role=='office-staff') Admin Dashboard @elseif (Auth()->user()->role=='property-owner') Owner Dashboard @else Client Dashboard @endif | @yield('title')</title> --}}
 		<title> Admin Dashboard | @yield('title')</title>
-
+		<link rel="shortcut icon" href="{{ asset('admin/assets/media/logos/logo-light.png') }}">
 		<meta name="description" content="Metronic admin dashboard live demo. Check out all the features of the admin panel. A large number of settings, additional services and widgets." />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 		<link rel="canonical" href="https://keenthemes.com/metronic" />
@@ -52,7 +52,6 @@
 		{{-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> --}}
 
 		<!--end::Layout Themes-->
-		<link rel="shortcut icon" href="assets/media/logos/new-loogo.png" />
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->

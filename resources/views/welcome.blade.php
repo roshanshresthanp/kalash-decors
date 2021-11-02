@@ -61,7 +61,7 @@
                                                         data-transform_idle="o:1;"
                                                         data-frames="[{&quot;delay&quot;:10,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;&quot;,&quot;mask&quot;:&quot;x:0px;y:[100%];s:inherit;e:inherit;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;y:[175%];&quot;,&quot;mask&quot;:&quot;x:inherit;y:inherit;s:inherit;e:inherit;&quot;,&quot;ease&quot;:&quot;Power2.easeInOut&quot;}]"
                                                         data-textAlign="['left','left','left','left','left','left']">
-                                                        <div><h2>Welcome to KalashCollections</h2><br>
+                                                        <div><h3>Welcome to KalashCollections</h3><br>
                                                         <b>We are all about providing authentic and high quality traditional products to our customers. “Our Culture Our Pride” </b>
                                                     </div><br> <br></div>
 
@@ -269,7 +269,7 @@
                                     </div>
                                 </div>
                                 
-                                <div class="home_sidebar_blog">
+                                {{-- <div class="home_sidebar_blog">
                                     <h3 class="single_title">From The Blog</h3>
                                     <div class="row">
                                         <div class="col-lg-4 col-sm-6">
@@ -303,7 +303,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                                 
                             </div>
                         </div>
@@ -351,13 +351,13 @@
                                             <div class="float-md-left">
                                                 <h3>Featured Products</h3>
                                             </div>
-                                            {{-- <div class="float-md-right">
+                                            <div class="float-md-right">
                                                 <a href="#" class="vc_goUp"><i class="arrow_carrot-left"></i></a>
                                                 <a href="#" class="vc_goDown"><i class="arrow_carrot-right"></i></a>
-                                            </div> --}}
+                                            </div>
                                         </div>
                                         <ul class="verticalCarouselGroup vc_list">
-                                            {{-- <li>
+                                             <li>
                                                 <div class="media">
                                                     <div class="d-flex">
                                                         <img src="frontend/img/product/featured-product/f-p-1.jpg" alt="">
@@ -367,7 +367,7 @@
                                                         <h5>$45.05</h5>
                                                     </div>
                                                 </div>
-                                            </li>
+                                            </li> 
                                             <li>
                                                 <div class="media">
                                                     <div class="d-flex">
@@ -400,7 +400,7 @@
                                                         <h5>$45.05</h5>
                                                     </div>
                                                 </div>
-                                            </li> --}}
+                                            </li>
                                             <li>
                                                 <div class="media">
                                                     <div class="d-flex">
@@ -448,7 +448,7 @@
                                         </ul>
                                     </div>
                                 </aside>
-                                <aside class="l_widget l_news_widget">
+                                {{-- <aside class="l_widget l_news_widget">
                                     <h3>newsletter</h3>
                                     <p>Sign up for our Newsletter !</p>
                                     <div class="input-group">
@@ -457,7 +457,9 @@
                                             <button class="btn btn-secondary subs_btn" type="button">Subscribe</button>
                                         </span>
                                     </div>
-                                </aside>
+                                </aside> --}}
+                                <div class="container" style="margin-top:200px;">
+                                </div>
                                 <aside class="l_widget l_hot_widget">
                                     <h3>Summer Hot Sale</h3>
                                     <p>Premium 700 Product , Titles and Content Ideas</p>

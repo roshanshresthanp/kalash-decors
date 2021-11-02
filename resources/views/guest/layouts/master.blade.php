@@ -24,7 +24,7 @@
         <!-- Extra plugin css -->
         <link href="{{asset('frontend/vendors/owl-carousel/owl.carousel.min.css')}}" rel="stylesheet">
         <link href="{{asset('frontend/vendors/bootstrap-selector/css/bootstrap-select.min.css')}}" rel="stylesheet">
-        <link href="vendors/vertical-slider/css/jQuery.verticalCarousel.css')}}" rel="stylesheet">
+        <link href="{{asset('frontend/vendors/vertical-slider/css/jQuery.verticalCarousel.css')}}" rel="stylesheet">
         
         <link href="{{asset('frontend/css/style.css')}}" rel="stylesheet">
         <link href="{{asset('frontend/css/responsive.css')}}" rel="stylesheet">
@@ -205,7 +205,7 @@
 
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav mr-auto">
-                                    <li class="nav-item dropdown submenu active">
+                                    <li class="nav-item dropdown submenu">
                                         <a class="nav-link " href="{{ url('/') }}" role="button" >
                                         Home
                                         </a>
@@ -380,6 +380,8 @@
             <script src="{{asset('frontend/vendors/vertical-slider/js/jQuery.verticalCarousel.js')}}"></script>
             <script src="{{asset('frontend/vendors/jquery-ui/jquery-ui.js')}}"></script>
             <script src="{{asset('frontend/js/theme.js')}}"></script>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
             <script>
                 /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
                 var dropdown = document.getElementsByClassName("dropdown-btn1");

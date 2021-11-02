@@ -6,7 +6,7 @@
                     <label>Product Name
                     {{-- <span class="text-danger">*</span> --}}
                 </label>
-                    <input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Enter Property Name" name="name" value="@if(isset($product)){{$product->name}}@else{{old('name')}}@endif" required />
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" placeholder="Enter Product Name" name="name" value="@if(isset($product)){{$product->name}}@else{{old('name')}}@endif" required />
                     @error('name')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
