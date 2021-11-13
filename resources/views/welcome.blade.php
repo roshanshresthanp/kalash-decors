@@ -170,6 +170,16 @@
                                         </div>
                                     </div>
                                 </div>
+                                {{-- <div class="fillter_home_sidebar">
+                                    <ul class="portfolio_filter">
+                                        <li class="active" data-filter="*"><a href="#">men's</a></li>
+                                        <li data-filter=".woman"><a href="#">Woman</a></li>
+                                        <li data-filter=".shoes"><a href="#">Shoes</a></li>
+                                        <li data-filter=".bags"><a href="#">Bags</a></li>
+                                    </ul>
+                                    
+                                </div> --}}
+                                
                                 <div class="">
                                     <ul class="portfolio_filter">
                                         {{-- <li class="active" data-filter="*"><a href="#">men's</a></li>
@@ -177,36 +187,7 @@
                                         <li data-filter=".shoes"><a href="#">Shoes</a></li>
                                         <li data-filter=".bags"><a href="#">Bags</a></li> --}}
                                     </ul>
-                                    <div class="home_l_product_slider owl-carousel">
-                                        
-                                            
-                                        <div class="item ">
-                                            <div class="l_product_item ">
-                                                @if(isset($product))
-                                                 @foreach ($product as $pro)
-                                                <div class="l_p_img">
-                                                    <img src="{{asset('storage/images/product/'.$pro->featured_photo)}}" alt="noimage">
-                                                    {{-- <h5 class="sale">Sale</h5>  --}}
-                                                </div>
-                                                <div class="l_p_text">
-                                                    <ul>
-                                                        <li class="p_icon"><a href="#"><i class="icon_piechart"></i></a></li>
-                                                        <li><a class="add_cart_btn" href="#">Add To Cart</a></li>
-                                                        <li class="p_icon"><a href="#"><i class="icon_heart_alt"></i></a></li>
-                                                    </ul>
-                                                    <h4>{{$pro->name}}</h4>
-                                                    <h5>
-                                                        {{-- <del>$45.50</del> --}}
-                                                        AUD {{$pro->price}}    </h5>
-                                                </div>
-                                                @endforeach
-                                        @endif
-                                            </div> 
-                                </div>
-                                            
-                                        
-                                       
-
+                                    <div class="home_l_product_slider ">
                                         {{-- <div class="item woman bags">
                                             <div class="l_product_item">
                                                 <div class="l_p_img">
@@ -328,7 +309,7 @@
                                     <div class="dropdown-container1">
                                         {{-- <a href="#">Saree</a><br> --}}
                                         @foreach ($cat->submenu as $smenu)
-                                        <a href="#">{{$smenu->name}}</a>
+                                        <a href="#">{{$smenu->name}}</a><br>
                                         @endforeach
                                         
                                     </div>
@@ -354,17 +335,21 @@
                                         </div>
                                         <ul class="verticalCarouselGroup vc_list">
                                              <li>
+                                                @if(isset($product))
+                                                @foreach ($product as $pro)
                                                 <div class="media">
-                                                    <div class="d-flex">
-                                                        <img src="frontend/img/product/featured-product/f-p-1.jpg" alt="">
+                                                    <div class="d-flex" style="height:50px;width:50px; ">
+                                                        <img src="{{asset('storage/images/product/'.$pro->featured_photo)}}" alt="">
                                                     </div>
-                                                    <div class="media-body">
-                                                        <h4>Oxford Shirt</h4>
-                                                        <h5>$45.05</h5>
+                                                    <div class="media-body" style="margin-left:100px;">
+                                                        <h4>{{$pro->name}}</h4>
+                                                        <h5>{{$pro->price}}</h5>
                                                     </div>
                                                 </div>
                                             </li> 
-                                            <li>
+                                            @endforeach
+                                            @endif
+                                            {{-- <li>
                                                 <div class="media">
                                                     <div class="d-flex">
                                                         <img src="frontend/img/product/featured-product/f-p-2.jpg" alt="">
@@ -440,7 +425,7 @@
                                                         <h5>$45.05</h5>
                                                     </div>
                                                 </div>
-                                            </li>
+                                            </li> --}}
                                         </ul>
                                     </div>
                                 </aside>
@@ -456,18 +441,58 @@
                                 </aside> --}}
                                 <div class="container" style="margin-top:200px;">
                                 </div>
-                                <aside class="l_widget l_hot_widget">
+                                {{-- <aside class="l_widget l_hot_widget">
                                     <h3>Summer Hot Sale</h3>
                                     <p>Premium 700 Product , Titles and Content Ideas</p>
                                     <a class="discover_btn" href="#">shop now</a>
-                                </aside>
+                                </aside> --}}
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
             <!--================End Main Content Area =================-->
-            
+            <div class="container">
+                <div class="contact_title" style="margin-top:30px; ">
+                    <h2>Our Products</h2>
+                </div>
+            </div>
+            <section>
+                <div class="container">
+                   
+                    <div class="four_column_product">
+                        <div class="row">
+                            @if(isset($product))
+                            @foreach ($product as $pro)
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="l_product_item">
+                                    <div class="l_p_img">
+                                        <img class="img-fluid" src="{{asset('storage/images/product/'.$pro->featured_photo)}}" alt="No Image">
+                                        {{-- <h5 class="sale">Sale</h5> --}}
+                                    </div>
+                                    <div class="l_p_text">
+                                       <ul>
+                                            <li class="p_icon"><a href="{{route('product.view',$pro->name)}}"><i class="icon_piechart"></i></a></li>
+                                            <li><a class="add_cart_btn" href="#">Add To Cart</a></li>
+                                            <li class="p_icon"><a href="#"><i class="icon_heart_alt"></i></a></li>
+                                        </ul>
+                                        <h4>{{$pro->name}}</h4>
+                                        <h5>
+                                            {{-- <del>$45.50</del> --}}
+                                             AUD {{$pro->price}}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                            
+                            @endif
+                            
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
             <!--================World Wide Service Area =================-->
             <section class="world_service">
                 <div class="container">

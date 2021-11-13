@@ -48,7 +48,23 @@
 		<link href="{{asset('admin/assets/css/themes/layout/header/menu/light.css')}}" rel="stylesheet" type="text/css" />
 		<link href="{{asset('admin/assets/css/themes/layout/brand/dark.css')}}" rel="stylesheet" type="text/css" />
 		<link href="{{asset('admin/assets/css/themes/layout/aside/dark.css')}}" rel="stylesheet" type="text/css" />
-
+		<link href="{{asset('admin/assets/css/font-awesome.min.css')}}" rel="stylesheet">
+        <link href="{{asset('admin/assets/vendors/line-icon/css/simple-line-icons.css')}}" rel="stylesheet">
+        <link href="{{asset('admin/assets/vendors/elegant-icon/style.css')}}" rel="stylesheet">
+        <!-- Bootstrap -->
+        <link href="{{asset('admin/assets/css/bootstrap.min.css')}}" rel="stylesheet">
+        
+        <!-- Rev slider css -->
+        <link href="{{asset('admin/assets/vendors/revolution/css/settings.css')}}" rel="stylesheet">
+        <link href="{{asset('admin/assets/vendors/revolution/css/layers.css')}}" rel="stylesheet">
+        <link href="{{asset('admin/assets/vendors/revolution/css/navigation.css')}}" rel="stylesheet">
+        
+        <!-- Extra plugin css -->
+        <link href="{{asset('admin/assets/vendors/owl-carousel/owl.carousel.min.css')}}" rel="stylesheet">
+        <link href="{{asset('admin/assets/vendors/bootstrap-selector/css/bootstrap-select.min.css')}}" rel="stylesheet">
+        
+        <link href="{{asset('admin/assets/css/style.css')}}" rel="stylesheet">
+        <link href="{{asset('admin/assets/css/responsive.css')}}" rel="stylesheet">
 		{{-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> --}}
 
 		<!--end::Layout Themes-->
@@ -226,6 +242,33 @@
 		<script src="{{asset('admin/assets/plugins/global/plugins.bundle.js')}}"></script>
 		<script src="{{asset('admin/assets/plugins/custom/prismjs/prismjs.bundle.js')}}"></script>
 		<script src="{{asset('admin/assets/js/scripts.bundle.js')}}"></script>
+		<script src="{{asset('admin/assets/js/jquery-3.2.1.min.js')}}"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="{{asset('admin/assets/js/popper.min.js')}}"></script>
+        <script src="{{asset('admin/assets/js/bootstrap.min.js')}}"></script>
+        <!-- Rev slider js -->
+        <script src="{{asset('admin/assets/vendors/revolution/js/jquery.themepunch.tools.min.js')}}"></script>
+        <script src="{{asset('admin/assets/vendors/revolution/js/jquery.themepunch.revolution.min.js')}}"></script>
+        <script src="{{asset('admin/assets/vendors/revolution/js/extensions/revolution.extension.actions.min.js')}}"></script>
+        <script src="{{asset('admin/assets/vendors/revolution/js/extensions/revolution.extension.video.min.js')}}"></script>
+        <script src="{{asset('admin/assets/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
+        <script src="{{asset('admin/assets/vendors/revolution/js/extensions/revolution.extension.layeranimation.min.js')}}"></script>
+        <script src="{{asset('admin/assets/vendors/revolution/js/extensions/revolution.extension.navigation.min.js')}}"></script>
+        <script src="{{asset('admin/assets/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
+        <!-- Extra plugin css -->
+        <script src="{{asset('admin/assets/vendors/counterup/jquery.waypoints.min.js')}}"></script>
+        <script src="{{asset('admin/assets/vendors/counterup/jquery.counterup.min.js')}}"></script>
+        <script src="{{asset('admin/assets/vendors/owl-carousel/owl.carousel.min.js')}}"></script>
+        <script src="{{asset('admin/assets/vendors/bootstrap-selector/js/bootstrap-select.min.js')}}"></script>
+        <script src="{{asset('admin/assets/vendors/image-dropdown/jquery.dd.min.js')}}"></script>
+        <script src="{{asset('admin/assets/js/smoothscroll.js')}}"></script>
+        <script src="{{asset('admin/assets/vendors/isotope/imagesloaded.pkgd.min.js')}}"></script>
+        <script src="{{asset('admin/assets/vendors/isotope/isotope.pkgd.min.js')}}"></script>
+        <script src="{{asset('admin/assets/vendors/magnify-popup/jquery.magnific-popup.min.js')}}"></script>
+        <script src="{{asset('admin/assets/vendors/vertical-slider/js/jQuery.verticalCarousel.js')}}"></script>
+        <script src="{{asset('admin/assets/vendors/jquery-ui/jquery-ui.js')}}"></script>
+        
+        <script src="{{asset('admin/assets/js/theme.js')}}"></script>
 		<!--end::Global Theme Bundle-->
 		<!--begin::Page Vendors(used by this page)-->
 		{{-- <script src="{{asset('admin/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js')}}"></script> --}}
