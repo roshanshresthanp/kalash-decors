@@ -107,7 +107,7 @@
                         <li class="nav-item {{request()->is('about-us')? 'active' :''}}"><a class="nav-link" href="{{ route('about-us.index') }}">About Us</a></li> 
                         {{-- <li class="nav-item"><a class="nav-link" href="{{ route('products.create') }}">View page</a></li>  --}}
                         {{-- <li class="nav-item"><a class="nav-link" href="#">lookbook</a></li> --}}
-                        <li class="nav-item {{request()->is('contact')? 'active' :''}}"><a class="nav-link" href="{{ route('contact.index') }}">Contact</a></li>
+                        <li class="nav-item {{request()->is('contact')? 'active' :''}}"><a class="nav-link" href="{{ route('contact.create') }}">Contact</a></li>
                     </ul>
                     <ul class="navbar-nav justify-content-end">
                         <li class="search_icon"><a href="#"><i class="icon-magnifier icons"></i></a></li>

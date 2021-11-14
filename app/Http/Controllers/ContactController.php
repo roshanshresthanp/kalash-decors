@@ -12,9 +12,16 @@ class ContactController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('can:isAdmin',['only'=>'index','destroy']);
+        
+    }
+
     public function index()
     {
-        return view('guest.contact');
+        $contact = Contact::latest()->get();
+        return view('admin.contact.index',compact('contact'));
     }
 
     /**
@@ -24,7 +31,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return view('guest.contact');
     }
 
     /**
@@ -35,7 +42,9 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        Contact::create($request->all());
+        return redirect()->back()->with('success','Message sent successfully');
     }
 
     /**
@@ -78,8 +87,9 @@ class ContactController extends Controller
      * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contact $contact)
+    public function destroy($id)
     {
-        //
+        Contact::find($id)->delete();
+        return redirect()->back()->with('success','Message deleted successfully');
     }
 }

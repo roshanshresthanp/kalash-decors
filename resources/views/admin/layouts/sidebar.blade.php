@@ -41,6 +41,14 @@
                     <span class="menu-text">Products</span>
                 </a>
             </li>
+
+            <li class="menu-item {{ request()->is('admin/contacts')? 'menu-item-active' : '' }}" aria-haspopup="true">
+                <a href="{{route('contact.index')}}" class="menu-link">
+                    <span class="svg-icon menu-icon fa fa-phone">
+                    </span>
+                    <span class="menu-text">Contact</span>
+                </a>
+            </li>
             {{-- @can('isAdmin') --}}
             {{-- <li class="menu-item {{ request()->is('admin/user/*') || request()->is('admin/user') ? 'menu-item-active' : '' }}" aria-haspopup="true">
                 <a href="{{route('admin.user.index')}}" class="menu-link">
@@ -91,13 +99,7 @@
                     <span class="menu-text">Messages</span>
                 </a>
             </li>
-            <li class="menu-item {{ request()->is('admin/contacts')? 'menu-item-active' : '' }}" aria-haspopup="true">
-                <a href="{{route('admin.contact')}}" class="menu-link">
-                    <span class="svg-icon menu-icon fa fa-phone">
-                    </span>
-                    <span class="menu-text">Enquiry</span>
-                </a>
-            </li>
+            
             <li class="menu-item {{ request()->is('admin/payment')? 'menu-item-active' : '' }}" aria-haspopup="true">
                 <a href="{{route('admin.payment.index')}}" class="menu-link">
                     <span class="svg-icon menu-icon fa fa-money-bill">

@@ -13,6 +13,15 @@
         <link href="{{asset('frontend/css/font-awesome.min.css')}}" rel="stylesheet">
         <link href="{{asset('frontend/vendors/line-icon/css/simple-line-icons.css')}}" rel="stylesheet">
         <link href="{{asset('frontend/vendors/elegant-icon/style.css')}}" rel="stylesheet">
+
+        <!-- Toaster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" 
+     href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+
+
         <!-- Bootstrap -->
         <link href="{{asset('frontend/css/bootstrap.min.css')}}" rel="stylesheet">
         

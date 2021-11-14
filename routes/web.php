@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ShopController;
 
 use App\Http\Controllers\Admin\Category\CategoryController;
@@ -28,9 +29,9 @@ use App\Http\Controllers\Admin\DashboardController;
 
 
 Auth::routes();
-Route::redirect('/home','/');
+// Route::redirect('/home','/');
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::resource('/about-us', AboutController::class);
 Route::resource('/products', ShopController::class);
 Route::resource('/contact', ContactController::class);
@@ -49,5 +50,7 @@ Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['auth']], function
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
     Route::resource('category', CategoryController::class)->middleware('can:isAdmin');
     Route::resource('product', ProductController::class)->middleware('can:isAdmin');
+    // Route::resource('/contact', ContactController::class)->middleware('isUser');
+
 
 });
