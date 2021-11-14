@@ -5,6 +5,7 @@ use App\Http\Controllers\ShopController;
 
 use App\Http\Controllers\Admin\Category\CategoryController;
 use App\Http\Controllers\Admin\Product\ProductController;
+use App\Http\Controllers\Admin\User\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 // use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -27,6 +28,7 @@ use App\Http\Controllers\Admin\DashboardController;
 
 
 Auth::routes();
+Route::redirect('/home','/');
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('/about-us', AboutController::class);
@@ -43,8 +45,9 @@ Route::get('/view-{name}',[ShopController::class,'productDetail'])->name('produc
 
 Route::group(['prefix'=>'admin','as'=>'admin.','middleware'=>['auth']], function(){
 
+    Route::resource('user',UserController::class)->middleware('can:isAdmin');
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
-    Route::resource('category', CategoryController::class);
-    Route::resource('product', ProductController::class);
+    Route::resource('category', CategoryController::class)->middleware('can:isAdmin');
+    Route::resource('product', ProductController::class)->middleware('can:isAdmin');
 
 });

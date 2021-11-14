@@ -411,7 +411,7 @@
 									</svg>
 									<!--end::Svg Icon-->
 								</span>
-								<a href="#" class="text-warning font-weight-bold font-size-h6">{{count($book)}} Active Booking</a>
+								<a href="#" class="text-warning font-weight-bold font-size-h6"> Active Booking</a>
 							</div>
 							<div class="col bg-light-primary px-6 py-8 rounded-xl mb-7">
 								<span class="svg-icon svg-icon-3x svg-icon-primary d-block my-2">
