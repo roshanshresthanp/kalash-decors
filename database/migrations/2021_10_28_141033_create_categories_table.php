@@ -18,7 +18,9 @@ class CreateCategoriesTable extends Migration
             $table->string('name')->nullable();
             $table->text('description')->nullable();
             $table->integer('parent_id')->default(0);
+            // $table->foreign('parent_id')->references('id')->on('categories')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
+
         });
     }
 
@@ -29,6 +31,7 @@ class CreateCategoriesTable extends Migration
      */
     public function down()
     {
+        // Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('categories');
     }
 }

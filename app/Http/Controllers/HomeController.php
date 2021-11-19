@@ -34,5 +34,27 @@ class HomeController extends Controller
         // }
         return view('welcome',compact('category','product'));
     }
+
+    public function categoryProduct($cat)
+    {
+        $category = Category::where('name',$cat)->first();
+        // foreach($category->product as $pro){
+        //     dd($pro->name);
+        // }
+        if($category)
+        return view('guest.cat-product',compact('category'));
+        else
+        return "No Product found";
+    }
+    public function productSearch(Request $request)
+    {
+        
+        $cat = Category::find($request->cat_id);
+        $name = $request->name;
+        // dd($cat->product);
+        $result = Product::where('name','like',$name)->get();
+        // dd($result);
+        return view('guest.search-product',compact('result'));
+    }
     
 }

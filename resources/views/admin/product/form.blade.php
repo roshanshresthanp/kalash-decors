@@ -34,7 +34,7 @@
 
                             @if(isset($category))
                                 @foreach ($category as $cat)
-                                <option value="{{$cat->id}}">{{$cat->name}}</option>
+                                <option value="{{$cat->id}}">{{$cat->name}} @if($cat->parent_id==0) {{'  (main category)'}}   </small> @endif </option>
                                 @endforeach
                             @endif
 

@@ -31,7 +31,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $category = Category::where('parent_id','!=',0)->get();
+        $category = Category::all();
+        // where('parent_id','!=',0)->get();
         // dd($category);
         return view("admin.product.create",compact('category'));
     }

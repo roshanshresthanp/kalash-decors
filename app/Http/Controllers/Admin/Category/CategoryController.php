@@ -105,6 +105,10 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
+        $del = Category::where('parent_id',$id)->get();
+        foreach($del as $d){
+            $d->delete();
+        }
         Category::find($id)->delete();
         return redirect('/admin/category')->with('success','Category deleted successfully');
 

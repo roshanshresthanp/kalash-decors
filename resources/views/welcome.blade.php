@@ -7,25 +7,29 @@
                     <div class="row row_disable">
                         <div class="col-lg-9 float-md-right">
                             <div class="sidebar_main_content_area">
+                                <form action="{{route('product.search')}}" method="POST">
+                                    @csrf
+                                    @method('POST')
                                 <div class="advanced_search_area">
-                                    <select class="selectpicker">
+                                    <select class="selectpicker" name="cat_id">
                                         
                                         <option>All Categories</option>
                                         @if(isset($category))
                                         @foreach($category as $cat)
-                                        @if($cat->parent_id != 0)
-                                        <option>{{$cat->name}}</option>
-                                        @endif  
+                                        {{-- @if($cat->parent_id != 0) --}}
+                                        <option value="{{$cat->id}}">{{$cat->name}}</option>
+                                        {{-- @endif   --}}
                                         @endforeach
                                         @endif
                                     </select>
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Search" aria-label="Search">
+                                        <input type="text" class="form-control" placeholder="Search" name="name" required aria-label="Search">
                                         <span class="input-group-btn">
-                                            <button class="btn btn-secondary" type="button"><i class="icon-magnifier icons"></i></button>
+                                            <button class="btn btn-secondary" type="submit"><i class="icon-magnifier icons"></i></button>
                                         </span>
                                     </div>
                                 </div>
+                                </form>
                                 <div class="main_slider_area">
                                     <div id="home_box_slider" class="rev_slider" data-version="5.3.1.6">
                                         <ul>
@@ -301,18 +305,20 @@
 
                                     @if(isset($category))
                                     @foreach ($category as $cat)
-                                    @if($cat->parent_id == 0)
-                                    <button class="dropdown-btn1">{{$cat->name}}
-                                        <i class="fa fa-caret-down"></i>
-                                    </button>
+                                    @if($cat->parent_id == 0 )
                                     
-                                    <div class="dropdown-container1">
-                                        {{-- <a href="#">Saree</a><br> --}}
-                                        @foreach ($cat->submenu as $smenu)
-                                        <a href="#">{{$smenu->name}}</a><br>
-                                        @endforeach
                                         
-                                    </div>
+                                        <button class="dropdown-btn1">@if(count($cat->submenu)==0) <a href="/{{$cat->name}}">{{$cat->name}}</a> @else {{$cat->name}} @endif
+                                            <span class="fa fa-caret-down"></span>
+                                        </button>
+                                                {{-- @if(count($cat->submenu)>0) --}}
+                                            <div class="dropdown-container1">
+                                                @foreach ($cat->submenu as $smenu)
+                                                <a href="/{{$smenu->name}}">{{$smenu->name}}</a><br>
+                                                @endforeach
+                                            </div>
+                                            {{-- @endif --}}
+                                            
                                     @endif
                                     @endforeach
                                     @endif
