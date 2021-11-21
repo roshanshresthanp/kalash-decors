@@ -8,7 +8,7 @@
                 <!--begin::Header Nav-->
                 <ul class="menu-nav">
                     <li class="menu-item menu-item-open menu-item-here menu-item-submenu menu-item-rel menu-item-open menu-item-here menu-item-active" data-menu-toggle="click" aria-haspopup="true">
-                        <a href="{{url('/')}}" target="_blank" class="menu-link">
+                        <a href="{{route('home')}}" target="_blank" class="menu-link">
                             <span class="menu-text">Home Page</span>
                             <i class="menu-arrow"></i>
                         </a>

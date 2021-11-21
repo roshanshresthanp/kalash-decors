@@ -99,7 +99,8 @@
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
-	<body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
+
+	{{-- <body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
 		<!--begin::Main-->
 		<div class="d-flex flex-column flex-root">
 			<!--begin::Login-->
@@ -212,7 +213,8 @@
 		<!--begin::Page Scripts(used by this page)-->
 		<script src="{{asset('assets/js/pages/custom/login/login-general.js')}}"></script>
 		<!--end::Page Scripts-->
-	</body>
+	</body> --}}
+	
 	<!--end::Body-->
  </html> 
 @endsection

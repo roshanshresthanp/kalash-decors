@@ -308,13 +308,13 @@
                                     @if($cat->parent_id == 0 )
                                     
                                         
-                                        <button class="dropdown-btn1">@if(count($cat->submenu)==0) <a href="/{{$cat->name}}">{{$cat->name}}</a> @else {{$cat->name}} @endif
+                                        <button class="dropdown-btn1">@if(count($cat->submenu)==0) <a href="{{route('cat.product',$cat->name)}}">{{$cat->name}}</a> @else {{$cat->name}} @endif
                                             <span class="fa fa-caret-down"></span>
                                         </button>
                                                 {{-- @if(count($cat->submenu)>0) --}}
                                             <div class="dropdown-container1">
                                                 @foreach ($cat->submenu as $smenu)
-                                                <a href="/{{$smenu->name}}">{{$smenu->name}}</a><br>
+                                                <a href="{{route('cat.product',$smenu->name)}}">{{$smenu->name}}</a><br>
                                                 @endforeach
                                             </div>
                                             {{-- @endif --}}

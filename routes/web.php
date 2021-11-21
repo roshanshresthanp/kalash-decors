@@ -37,7 +37,7 @@ Route::resource('/products', ShopController::class);
 Route::resource('/contact', ContactController::class);
 
 Route::get('/view-{name}',[ShopController::class,'productDetail'])->name('product.view');
-Route::get('/{category}',[HomeController::class,'categoryProduct'])->name('cat.product');
+Route::get('/show-{category}',[HomeController::class,'categoryProduct'])->name('cat.product');
 
 Route::post('/search',[HomeController::class,'productSearch'])->name('product.search');
 // Route::get('/search',[HomeController::class,'productSearch'])->name('product.search');
