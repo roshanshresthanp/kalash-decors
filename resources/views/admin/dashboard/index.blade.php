@@ -425,7 +425,6 @@
 									</svg>
 									<!--end::Svg Icon-->
 								</span>
-								<a href="#" class="text-primary font-weight-bold font-size-h6 mt-2">{{count($owners)}} Property Owners</a>
 							</div>
 						</div>
 						<!--end::Row-->
@@ -443,7 +442,6 @@
 									</svg>
 									<!--end::Svg Icon-->
 								</span>
-								<a href="#" class="text-danger font-weight-bold font-size-h6 mt-2">{{count($property)}} Properties</a>
 							</div>
 							<div class="col bg-light-success px-6 py-8 rounded-xl">
 								<span class="svg-icon svg-icon-3x svg-icon-success d-block my-2">
@@ -457,7 +455,6 @@
 									</svg>
 									<!--end::Svg Icon-->
 								</span>
-								<a href="#" class="text-success font-weight-bold font-size-h6 mt-2">{{count($contacts)}} Enquiries</a>
 							</div>
 						</div>
 						<!--end::Row-->
@@ -683,31 +680,7 @@
 				</div>
 				<!--end::Header-->
 				<!--begin::Body-->
-				<div class="card-body pt-2">
-					<!--begin::Item-->
-					@foreach ($user->received as $item)
-					<div class="d-flex align-items-center mt-4">
-						<!--begin::Bullet-->
-						<span class="bullet bullet-bar bg-success align-self-stretch"></span>
-						<!--end::Bullet-->
-						<!--begin::Checkbox-->
-						<label class="checkbox checkbox-lg checkbox-light-success fa fa-money-bill  checkbox-inline flex-shrink-0 m-0 mx-4">
-							{{-- <input type="checkbox" name="select" value="1" /> --}}
-							{{-- <span></span> --}}
-						</label>
-						<!--end::Checkbox-->
-						<!--begin::Text-->
-						
-						<div class="d-flex flex-column flex-grow-1">
-							<a href="#" class="text-dark-75 text-hover-primary font-weight-bold font-size-lg mb-1">You have received a payment of AUD {{$item->amount}} from @foreach($users as $u) @if($u->id == $item->paid_by) {{$u->name}} @endif @endforeach for @foreach($property as $u) @if($u->id == $item->property_id) {{$u->name}} @endif @endforeach
-							</a>
-							<span class="text-muted font-weight-bold"> {{$item->created_at}} </span>
-						</div>
-						<!--end::Text-->
-
-					</div>
-					@endforeach
-
+			
 					
 				
 				</div>
@@ -725,29 +698,7 @@
 				</div>
 				<!--end::Header-->
 				<!--begin::Body-->
-				<div class="card-body pt-2">
-					<!--begin::Item-->
-					@foreach ($issue as $item)
-					
-					<div class="d-flex align-items-center mb-10">
-						<!--begin::Symbol-->
-						<div class="symbol symbol-40 symbol-light-info mr-5">
-							<span class="symbol-label">
-								<i class="fa fa-bug"></i>
-								{{-- <img src="assets/media/svg/avatars/009-boy-4.svg" class="h-75 align-self-end" alt="" /> --}}
-							</span>
-						</div>
-						<!--end::Symbol-->
-						<!--begin::Text-->
-						<div class="d-flex flex-column flex-grow-1 font-weight-bold">
-							<a href="#" class="text-dark text-hover-primary mb-1 font-size-lg"> {{$item->subject}} </a>
-							<span class="text-muted">{{$item->created_at}}</span>
-						</div>
-						<!--end::Text-->
-					</div>
-					@endforeach
-					<!--end::Item-->
-				</div>
+				
 				<!--end::Body-->
 			</div>
 			<!--end::List Widget 3-->
@@ -764,84 +715,7 @@
 				</div>
 				<!--end::Header-->
 				<!--begin::Body-->
-				<div class="card-body pt-2">
-					<!--begin::Item-->
-					@foreach($powners as $own)
-					<div class="d-flex align-items-center mb-10">
-						<!--begin::Symbol-->
-						<div class="symbol symbol-40  mr-5">
-							<span class="symbol-label">
-								<img src="{{asset('storage/images/user/'.$own->photo)}}" class="h-75 align-self-end" alt="" />
-							</span>
-						</div>
-						<!--end::Symbol-->
-						<!--begin::Text-->
-						<div class="d-flex flex-column flex-grow-1 font-weight-bold">
-							<a href="#" class="text-dark text-hover-primary mb-1 font-size-lg">{{$own->name}}</a>
-							<span class="text-muted">{{$own->email}}, {{$own->contact	}}</span>
-						</div>
-						<!--end::Text-->
-						<!--begin::Dropdown-->
-						{{-- <div class="dropdown dropdown-inline ml-2" data-toggle="tooltip" title="Quick actions" data-placement="left">
-							<a href="#" class="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i class="ki ki-bold-more-hor"></i>
-							</a>
-							<div class="dropdown-menu p-0 m-0 dropdown-menu-md dropdown-menu-right">
-								<!--begin::Navigation-->
-								<ul class="navi navi-hover">
-									<li class="navi-header font-weight-bold py-4">
-										<span class="font-size-lg">Choose Label:</span>
-										<i class="flaticon2-information icon-md text-muted" data-toggle="tooltip" data-placement="right" title="Click to learn more..."></i>
-									</li>
-									<li class="navi-separator mb-3 opacity-70"></li>
-									<li class="navi-item">
-										<a href="#" class="navi-link">
-											<span class="navi-text">
-												<span class="label label-xl label-inline label-light-success">Customer</span>
-											</span>
-										</a>
-									</li>
-									<li class="navi-item">
-										<a href="#" class="navi-link">
-											<span class="navi-text">
-												<span class="label label-xl label-inline label-light-danger">Partner</span>
-											</span>
-										</a>
-									</li>
-									<li class="navi-item">
-										<a href="#" class="navi-link">
-											<span class="navi-text">
-												<span class="label label-xl label-inline label-light-warning">Suplier</span>
-											</span>
-										</a>
-									</li>
-									<li class="navi-item">
-										<a href="#" class="navi-link">
-											<span class="navi-text">
-												<span class="label label-xl label-inline label-light-primary">Member</span>
-											</span>
-										</a>
-									</li>
-									<li class="navi-item">
-										<a href="#" class="navi-link">
-											<span class="navi-text">
-												<span class="label label-xl label-inline label-light-dark">Staff</span>
-											</span>
-										</a>
-									</li>
-									<li class="navi-separator mt-3 opacity-70"></li>
-									<li class="navi-footer py-4">
-										<a class="btn btn-clean font-weight-bold btn-sm" href="#">
-										<i class="ki ki-plus icon-sm"></i>Add new</a>
-									</li>
-								</ul>
-								<!--end::Navigation-->
-							</div>
-						</div> --}}
-						<!--end::Dropdown-->
-					</div>
-					@endforeach
-				</div>
+				
 				<!--end::Body-->
 			</div>
 			<!--end::List Widget 3-->
