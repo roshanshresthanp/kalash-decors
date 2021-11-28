@@ -81,7 +81,6 @@
 									</svg>
 									<!--end::Svg Icon-->
 								</span>
-								{{-- <a href="#" class="text-primary font-weight-bold font-size-h6 mt-2">{{count($owners)}} Property Owners</a> --}}
 							</div>
 						</div>
 						<!--end::Row-->
@@ -99,7 +98,6 @@
 									</svg>
 									<!--end::Svg Icon-->
 								</span>
-								{{-- <a href="#" class="text-danger font-weight-bold font-size-h6 mt-2">{{count($property)}} Properties</a> --}}
 							</div>
 							<div class="col bg-light-success px-6 py-8 rounded-xl">
 								<span class="svg-icon svg-icon-3x svg-icon-success d-block my-2">
@@ -113,7 +111,6 @@
 									</svg>
 									<!--end::Svg Icon-->
 								</span>
-								{{-- <a href="#" class="text-success font-weight-bold font-size-h6 mt-2">{{count($contacts)}} Enquiries</a> --}}
 							</div>
 						</div>
 						<!--end::Row-->
@@ -124,41 +121,21 @@
 			</div>
 			<!--end::Mixed Widget 1-->
 		</div>
-		
-		<div class="col-lg-6 col-xxl-4 order-1 order-xxl-2">
-			<!--begin::List Widget 3-->
+		{{-- <div class="col-lg-6 col-xxl-4">
+			<!--begin::List Widget 9-->
 			<div class="card card-custom card-stretch gutter-b">
 				<!--begin::Header-->
-				<div class="card-header border-0">
-					<h3 class="card-title font-weight-bolder text-dark">Recently added Property Owners</h3>
-					
-				</div>
-				<!--end::Header-->
-				<!--begin::Body-->
-				<div class="card-body pt-2">
-					<!--begin::Item-->
-					@if(isset($powners))
-					@foreach($powners as $own)
-					<div class="d-flex align-items-center mb-10">
-						<!--begin::Symbol-->
-						<div class="symbol symbol-40  mr-5">
-							<span class="symbol-label">
-								<img src="{{asset('storage/images/user/'.$own->photo)}}" class="h-75 align-self-end" alt="" />
-							</span>
-						</div>
-						<!--end::Symbol-->
-						<!--begin::Text-->
-						<div class="d-flex flex-column flex-grow-1 font-weight-bold">
-							<a href="#" class="text-dark text-hover-primary mb-1 font-size-lg">{{$own->name}}</a>
-							<span class="text-muted">{{$own->email}}, {{$own->contact	}}</span>
-						</div>
-						<!--end::Text-->
-						<!--begin::Dropdown-->
-						{{-- <div class="dropdown dropdown-inline ml-2" data-toggle="tooltip" title="Quick actions" data-placement="left">
-							<a href="#" class="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<div class="card-header align-items-center border-0 mt-4">
+					<h3 class="card-title align-items-start flex-column">
+						<span class="font-weight-bolder text-dark">My Activity</span>
+						<span class="text-muted mt-3 font-weight-bold font-size-sm">890,344 Sales</span>
+					</h3>
+					<div class="card-toolbar">
+						<div class="dropdown dropdown-inline">
+							<a href="#" class="btn btn-clean btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<i class="ki ki-bold-more-hor"></i>
 							</a>
-							<div class="dropdown-menu p-0 m-0 dropdown-menu-md dropdown-menu-right">
+							<div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
 								<!--begin::Navigation-->
 								<ul class="navi navi-hover">
 									<li class="navi-header font-weight-bold py-4">
@@ -209,12 +186,192 @@
 								</ul>
 								<!--end::Navigation-->
 							</div>
-						</div> --}}
-						<!--end::Dropdown-->
+						</div>
 					</div>
-					@endforeach
-					@endif
 				</div>
+				<!--end::Header-->
+				<!--begin::Body-->
+				<div class="card-body pt-4">
+					<!--begin::Timeline-->
+					<div class="timeline timeline-6 mt-3">
+						<!--begin::Item-->
+						<div class="timeline-item align-items-start">
+							<!--begin::Label-->
+							<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">08:42</div>
+							<!--end::Label-->
+							<!--begin::Badge-->
+							<div class="timeline-badge">
+								<i class="fa fa-genderless text-warning icon-xl"></i>
+							</div>
+							<!--end::Badge-->
+							<!--begin::Text-->
+							<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Outlines keep you honest. And keep structure</div>
+							<!--end::Text-->
+						</div>
+						<!--end::Item-->
+						<!--begin::Item-->
+						<div class="timeline-item align-items-start">
+							<!--begin::Label-->
+							<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">10:00</div>
+							<!--end::Label-->
+							<!--begin::Badge-->
+							<div class="timeline-badge">
+								<i class="fa fa-genderless text-success icon-xl"></i>
+							</div>
+							<!--end::Badge-->
+							<!--begin::Content-->
+							<div class="timeline-content d-flex">
+								<span class="font-weight-bolder text-dark-75 pl-3 font-size-lg">AEOL meeting</span>
+							</div>
+							<!--end::Content-->
+						</div>
+						<!--end::Item-->
+						<!--begin::Item-->
+						<div class="timeline-item align-items-start">
+							<!--begin::Label-->
+							<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">14:37</div>
+							<!--end::Label-->
+							<!--begin::Badge-->
+							<div class="timeline-badge">
+								<i class="fa fa-genderless text-danger icon-xl"></i>
+							</div>
+							<!--end::Badge-->
+							<!--begin::Desc-->
+							<div class="timeline-content font-weight-bolder font-size-lg text-dark-75 pl-3">Make deposit
+							<a href="#" class="text-primary">USD 700</a>. to ESL</div>
+							<!--end::Desc-->
+						</div>
+						<!--end::Item-->
+						<!--begin::Item-->
+						<div class="timeline-item align-items-start">
+							<!--begin::Label-->
+							<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">16:50</div>
+							<!--end::Label-->
+							<!--begin::Badge-->
+							<div class="timeline-badge">
+								<i class="fa fa-genderless text-primary icon-xl"></i>
+							</div>
+							<!--end::Badge-->
+							<!--begin::Text-->
+							<div class="timeline-content font-weight-mormal font-size-lg text-muted pl-3">Indulging in poorly driving and keep structure keep great</div>
+							<!--end::Text-->
+						</div>
+						<!--end::Item-->
+						<!--begin::Item-->
+						<div class="timeline-item align-items-start">
+							<!--begin::Label-->
+							<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">21:03</div>
+							<!--end::Label-->
+							<!--begin::Badge-->
+							<div class="timeline-badge">
+								<i class="fa fa-genderless text-danger icon-xl"></i>
+							</div>
+							<!--end::Badge-->
+							<!--begin::Desc-->
+							<div class="timeline-content font-weight-bolder text-dark-75 pl-3 font-size-lg">New order placed
+							<a href="#" class="text-primary">#XF-2356</a>.</div>
+							<!--end::Desc-->
+						</div>
+						<!--end::Item-->
+						<!--begin::Item-->
+						<div class="timeline-item align-items-start">
+							<!--begin::Label-->
+							<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">23:07</div>
+							<!--end::Label-->
+							<!--begin::Badge-->
+							<div class="timeline-badge">
+								<i class="fa fa-genderless text-info icon-xl"></i>
+							</div>
+							<!--end::Badge-->
+							<!--begin::Text-->
+							<div class="timeline-content font-weight-mormal font-size-lg text-muted pl-3">Outlines keep and you honest. Indulging in poorly driving</div>
+							<!--end::Text-->
+						</div>
+						<!--end::Item-->
+						<!--begin::Item-->
+						<div class="timeline-item align-items-start">
+							<!--begin::Label-->
+							<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">16:50</div>
+							<!--end::Label-->
+							<!--begin::Badge-->
+							<div class="timeline-badge">
+								<i class="fa fa-genderless text-primary icon-xl"></i>
+							</div>
+							<!--end::Badge-->
+							<!--begin::Text-->
+							<div class="timeline-content font-weight-mormal font-size-lg text-muted pl-3">Indulging in poorly driving and keep structure keep great</div>
+							<!--end::Text-->
+						</div>
+						<!--end::Item-->
+						<!--begin::Item-->
+						<div class="timeline-item align-items-start">
+							<!--begin::Label-->
+							<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">21:03</div>
+							<!--end::Label-->
+							<!--begin::Badge-->
+							<div class="timeline-badge">
+								<i class="fa fa-genderless text-danger icon-xl"></i>
+							</div>
+							<!--end::Badge-->
+							<!--begin::Desc-->
+							<div class="timeline-content font-weight-bolder font-size-lg text-dark-75 pl-3">New order placed
+							<a href="#" class="text-primary">#XF-2356</a>.</div>
+							<!--end::Desc-->
+						</div>
+						<!--end::Item-->
+					</div>
+					<!--end::Timeline-->
+				</div>
+				<!--end: Card Body-->
+			</div>
+			<!--end: List Widget 9-->
+		</div> --}}
+		<div class="col-lg-6 col-xxl-4 order-1 order-xxl-2">
+			<!--begin::List Widget 4-->
+			<div class="card card-custom card-stretch gutter-b">
+				<!--begin::Header-->
+				<div class="card-header border-0">
+					<h3 class="card-title font-weight-bolder text-dark">Last five transactions</h3>
+				
+				</div>
+				<!--end::Header-->
+				<!--begin::Body-->
+			
+					
+				
+				</div>
+				<!--end::Body-->
+			</div>
+			<!--end:List Widget 4-->
+		</div>
+		<div class="col-lg-6 col-xxl-4 order-1 order-xxl-2">
+			<!--begin::List Widget 3-->
+			<div class="card card-custom card-stretch gutter-b">
+				<!--begin::Header-->
+				<div class="card-header border-0">
+					<h3 class="card-title font-weight-bolder text-dark">Recently solved issues</h3>
+					
+				</div>
+				<!--end::Header-->
+				<!--begin::Body-->
+				
+				<!--end::Body-->
+			</div>
+			<!--end::List Widget 3-->
+		</div>
+		
+		
+		<div class="col-lg-6 col-xxl-4 order-1 order-xxl-2">
+			<!--begin::List Widget 3-->
+			<div class="card card-custom card-stretch gutter-b">
+				<!--begin::Header-->
+				<div class="card-header border-0">
+					<h3 class="card-title font-weight-bolder text-dark">Recently added Property Owners</h3>
+					
+				</div>
+				<!--end::Header-->
+				<!--begin::Body-->
+				
 				<!--end::Body-->
 			</div>
 			<!--end::List Widget 3-->
