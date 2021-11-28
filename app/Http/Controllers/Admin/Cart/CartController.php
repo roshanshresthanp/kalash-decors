@@ -46,7 +46,8 @@ class CartController extends Controller
     {
         // dd($request->all());
         $data = $request->all();
-        $pro = Cart::where(['user_id'=>$request->user_id,'product_id'=>$request->product_id])->first();
+        $data['user_id'] = auth()->user()->id;
+        $pro = Cart::where(['user_id'=>$data['user_id'],'product_id'=>$request->product_id])->first();
             if($pro){
                 // dd($pro);
                 $pro->quantity = $pro->quantity+$request->quantity;

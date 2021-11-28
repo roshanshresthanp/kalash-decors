@@ -130,7 +130,7 @@
                         </div>
                         {{-- <a class="add_cart_btn" href="#">add to cart</a> --}}
                         <input type="hidden" name="product_id" value="{{$pro->id}}">
-                        <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
+                        
                         <input type="submit" class="add_cart_btn" value="Add To Cart">
                                     
                         </form>

@@ -55,7 +55,7 @@
                                     {{-- <a class="add_cart_btn" href="dada">Add To Cart</a> --}}
                                     <input type="submit" class="add_cart_btn" value="Add To Cart">
                                     <input type="hidden" name="product_id" value="{{$pro->id}}">
-                                    <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
+                                    
                                     <input type="hidden" name="quantity" value="1">
                                     </form></li>
                                 <li class="p_icon"><a href="#"><i class="icon_heart_alt"></i></a></li>
