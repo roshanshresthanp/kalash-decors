@@ -49,7 +49,15 @@
                         <div class="l_p_text">
                            <ul>
                                 <li class="p_icon"><a href="{{route('product.view',$pro->name)}}"><i class="icon_piechart"></i></a></li>
-                                <li><a class="add_cart_btn" href="#">Add To Cart</a></li>
+                                <li><form action="{{route('cart.store')}}" method="post">
+                                    @csrf
+                                    @method('POST')
+                                    {{-- <a class="add_cart_btn" href="dada">Add To Cart</a> --}}
+                                    <input type="submit" class="add_cart_btn" value="Add To Cart">
+                                    <input type="hidden" name="product_id" value="{{$pro->id}}">
+                                    <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
+                                    <input type="hidden" name="quantity" value="1">
+                                    </form></li>
                                 <li class="p_icon"><a href="#"><i class="icon_heart_alt"></i></a></li>
                             </ul>
                             <h4>{{$pro->name}}</h4>

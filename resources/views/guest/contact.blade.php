@@ -17,7 +17,6 @@
 <!--================Contact Area =================-->
 <section class="contact_area">
     <div class="container">
-        @include('admin.layouts.message')
         <div class="contact_title">
             <h2>Get in Touch</h2>
         </div>

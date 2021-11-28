@@ -110,9 +110,9 @@
                         <li class="nav-item {{request()->is('contact')? 'active' :''}}"><a class="nav-link" href="{{ route('contact.create') }}">Contact</a></li>
                     </ul>
                     <ul class="navbar-nav justify-content-end">
-                        <li class="search_icon"><a href="#"><i class="icon-magnifier icons"></i></a></li>
+                        <li class="search_icon"><a href=""><i class="icon-magnifier icons"></i></a></li>
                         <li class="user_icon"><a href="#"><i class="icon-user icons"></i></a></li>
-                        <li class="cart_cart"><a href="#"><i class="icon-handbag icons "></i></a></li>
+                        <li class=""><a href="{{route('cart.index')}}"><i class="icon-handbag icons">&nbsp;<sub class="badge badge-light" style="color:black;">1</sub></i></a></li>
                     </ul>
                 </div>
             </nav>

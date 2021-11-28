@@ -120,12 +120,20 @@
                     </div> --}}
                     @if(isset($pro) && $pro->availability==1)
                     <div class="quantity">
+                        <form action="{{route('cart.store')}}" method="post">
+                            @csrf
+                            @method('POST')
                         <div class="custom">
                             <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;" class="reduced items-count" type="button"><i class="icon_minus-06"></i></button>
-                            <input type="text" name="qty" id="sst" maxlength="12" value="01" title="Quantity:" class="input-text qty">
+                            <input type="text" name="quantity" id="sst" maxlength="12" value="01" title="Quantity:" class="input-text qty">
                             <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;" class="increase items-count" type="button"><i class="icon_plus"></i></button>
                         </div>
-                        <a class="add_cart_btn" href="#">add to cart</a>
+                        {{-- <a class="add_cart_btn" href="#">add to cart</a> --}}
+                        <input type="hidden" name="product_id" value="{{$pro->id}}">
+                        <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
+                        <input type="submit" class="add_cart_btn" value="Add To Cart">
+                                    
+                        </form>
                     </div>
                     @endif
                     <div class="shareing_icon">

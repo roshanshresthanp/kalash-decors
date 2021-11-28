@@ -1,6 +1,6 @@
-@include('guest.layouts.master')
+@extends('guest.layouts.master')
 
-@section('main')
+@section('content')
 <section class="shopping_cart_area p_100">
     <div class="container">
         <div class="row">
@@ -19,25 +19,40 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @if(isset($user->cart) && isset($products))
+                                @foreach($user->cart as $pro)
                                 <tr>
                                     <th scope="row">
-                                        <img src="{{asset('frontend/img/icon/close-icon.png')}}" alt="">
+                                        <form action="{{route('cart.destroy',$pro->id)}}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                       {{-- <a href="{{route('cart.destroy',1)}}"> <img src="{{asset('frontend/img/icon/close-icon.png')}}" alt=""></a> --}}
+                                       <button type="submit" class="fa fa-times"></button>
+                                          
+                                        </form>
                                     </th>
                                     <td>
                                         <div class="media">
                                             <div class="d-flex">
-                                                <img src="{{asset('frontend/img/product/cart-product/cart-1.jpg')}}" alt="">
+                                                @foreach($products as $product) @if($product->id==$pro->product_id) <img src="{{asset('storage/images/product/'.$product->featured_photo)}}" alt="" height="80px" width="60px">
+                                                @endif @endforeach
                                             </div>
                                             <div class="media-body">
-                                                <h4>Mens Nike Bag</h4>
+                                                <h4>@foreach($products as $product) @if($product->id==$pro->product_id) {{$product->name}} @endif @endforeach</h4>
                                             </div>
                                         </div>
                                     </td>
-                                    <td><p>$150</p></td>
-                                    <td><input type="text" placeholder="01"></td>
-                                    <td><p>$150</p></td>
+                                    <td><p>@foreach($products as $product) @if($product->id==$pro->product_id) {{$product->price}} @endif @endforeach</p></td>
+                                    <td><input type="text" value="{{$pro->quantity}}"></td>
+                                    <td><p>@foreach($products as $product) @if($product->id==$pro->product_id) {{$product->price*$pro->quantity}}  @endif @endforeach</p></td>
                                 </tr>
-                                <tr>
+                                @endforeach
+                                @else
+                                <div class="alert alert-warning text-center">
+                                   <p> Your cart is empty !! </p>
+                                </div>
+                                @endif
+                                {{-- <tr>
                                     <th scope="row">
                                         <img src="{{asset('frontend/img/icon/close-icon.png')}}" alt="">
                                     </th>
@@ -54,7 +69,7 @@
                                     <td><p>$150</p></td>
                                     <td><input type="text" placeholder="01"></td>
                                     <td><p>$250</p></td>
-                                </tr>
+                                </tr> --}}
                             </tbody>
                         </table>
                     </div>

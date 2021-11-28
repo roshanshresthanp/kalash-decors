@@ -7,6 +7,7 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\Admin\Category\CategoryController;
 use App\Http\Controllers\Admin\Product\ProductController;
 use App\Http\Controllers\Admin\User\UserController;
+use App\Http\Controllers\Admin\Cart\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 // use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -40,12 +41,16 @@ Route::get('/view-{name}',[ShopController::class,'productDetail'])->name('produc
 Route::get('/show-{category}',[HomeController::class,'categoryProduct'])->name('cat.product');
 
 Route::post('/search',[HomeController::class,'productSearch'])->name('product.search');
-// Route::get('/search',[HomeController::class,'productSearch'])->name('product.search');
-// Route::get('/test',function()
-// {
-// return "dada";
 
-// })->name('cat.product');
+//cart 
+
+Route::resource('/cart', CartController::class)->middleware('auth');
+
+// Route::get('/search',[HomeController::class,'productSearch'])->name('product.search');
+
+
+// Route::resource('category', CategoryController::class)->middleware('can:isAdmin');
+
 
 
 

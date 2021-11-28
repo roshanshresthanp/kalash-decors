@@ -155,6 +155,8 @@
             
             @include('guest.layouts.header')
             <div>
+                @include('admin.layouts.message')
+
                 @yield('content')
             </div>
             <footer class="footer_area border_none">
